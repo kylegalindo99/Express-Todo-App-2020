@@ -9,11 +9,12 @@
 <body>
     <h1>Todos</h1>
     <ul>
-        <% todos.forEach(function(t) { %>
-        <li>
-            <%= t.todo %> - <%= t.done ? 'done' : 'not done' %>
-        </li>
-        <% }); %>
+        <% todos.forEach((t, idx) => { %>
+            <li>
+                <a href="/todos/<%= idx %>">
+                    <%= t.todo %>
+                </a>
+            </li>
     </ul>
 </body>
 </html>
