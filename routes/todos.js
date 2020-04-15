@@ -1,12 +1,8 @@
 var express = require("express");
 var router = express.Router();
 
-const Todo = require("../models/todo");
+const todosCtrl = require("../controllers/todos");
 
-router.get("/", (req, res) => {
-  res.render("todos/index.ejs", {
-    todos: Todo.getAll()
-  });
-});
+router.get("/", todosCtrl.index);
 
 module.exports = router;
